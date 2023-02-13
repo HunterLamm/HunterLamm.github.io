@@ -2415,6 +2415,9 @@ hr {
     padding: 0 10px 0;
   }
 }
+.main-menu {
+  width: 600px;
+}
 @media (max-width: 767px) {
   .main-menu {
     padding-top: 10px;
@@ -2422,7 +2425,8 @@ hr {
 }
 .menu {
   margin-top: -400px;
-  margin-right: -1250px;
+  position: relative;
+  left: 785px;
   padding: 0;
 }
 .menu .menu-item {
@@ -2597,7 +2601,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffda47;
+  background: #9fe7ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
