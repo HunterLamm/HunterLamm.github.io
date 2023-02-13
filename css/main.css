@@ -2415,9 +2415,6 @@ hr {
     padding: 0 10px 0;
   }
 }
-.main-menu {
-  width: 600px;
-}
 @media (max-width: 767px) {
   .main-menu {
     padding-top: 10px;
@@ -2601,7 +2598,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffac81;
+  background: #d4669d;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
