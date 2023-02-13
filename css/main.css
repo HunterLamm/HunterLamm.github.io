@@ -2425,8 +2425,8 @@ hr {
 }
 .menu {
   margin-top: -400px;
-  position: relative;
-  left: 785px;
+  position: absolute;
+  right: 0px;
   padding: 0;
 }
 .menu .menu-item {
@@ -2601,7 +2601,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #9fe7ff;
+  background: #ffac81;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
