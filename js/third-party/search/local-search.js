@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle and trigger popup window
   document.querySelectorAll('.popup-trigger').forEach(element => {
     element.addEventListener('click', () => {
-      document.body.classList.add('search-active');
+      window.location.href = "https://hunterlamm.github.io/Search/"
       // Wait for search-popup animation to complete
       setTimeout(() => input.focus(), 500);
       if (!localSearch.isfetched) localSearch.fetchData();
