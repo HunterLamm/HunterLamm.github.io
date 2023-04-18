@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Longest Increasing Subsequence (LIS)</title>
+      <link href="/2019/11/01/Longest-Increasing-Subsequence-LIS/"/>
+      <url>/2019/11/01/Longest-Increasing-Subsequence-LIS/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Question:</strong> Given a sequence, fin the length of the longest subsequence that all elements in the subsequence is increasing.</p><p>For example, given a sequence as follow:</p><script type="math/tex; mode=display">4 {\quad} 10 {\quad} 15 {\quad} 7 {\quad} 5 {\quad} 3 {\quad} 2 {\quad} 8 {\quad} 9 {\quad} 8 {\quad} 15 {\quad} 17</script><p>The answer of this sequence is 6. This subsequence is: 4 7 8 9 15 17.</p><p><strong>Solution:</strong></p><p>Let’s think about the brute-force solution. For each elements we have two choices: use it or not. Thus, if we use the<br>brute-force solution the time complexity at least <strong>O(2<sup>n</sup>)</strong> .</p><p>Commonly speaking, the size of n will larger than 1000. It is a tremendous amount of calculation for computer. Therefore, we<br>have to find out better way to solve it.</p><p>We are going to use <strong>Dynamic Programming (DP)</strong> to solve this problem.</p><p>The first step is to define this question by a function. Let’s set <strong>f(x)</strong> means all collection of subsequence ending with the<br><strong>x<sub>th</sub></strong> element.</p><p>The second step is to find out a meaning for the function. Each value in the function has its own meaning. In this question we<br>are finding the longest length of subsequence; thus, we can set the meaning for each value of <strong>f(x) </strong>to be <strong>maximum</strong>.<br><strong>f(x)</strong> represents the longest length of subsequence which is ending with the <strong>x<sub>th</sub></strong> element.</p><p>Next step is to find out how we can solve this function. This is the most important part in DP. Let’s assume us have the value<br>of <strong>f(0)</strong> to <strong>f(i-1)</strong>. How can we get the value of <strong>f(i)</strong>? Every subsequence ending with the element that is before<br><strong>i<sub>th</sub></strong> element and smaller than <strong>i<sub>th</sub></strong> element can add the <strong>i<sub>th</sub></strong> element into the end of<br>subsequence. Hence, we can get the equation as follow:</p><script type="math/tex; mode=display">f(i) = max(f(0),f(1),f(2),...,f(i-1))+1</script><p>The code written in C++ as follow:</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> length,<span class="keyword">int</span> nums[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;nums[j])</span><br><span class="line">            f[i] = <span class="built_in">max</span>(f[i],f[j]+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> rst = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++) rst = <span class="built_in">max</span>(rst,f[i]);</span><br><span class="line">    <span class="keyword">return</span> rst;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> algorithms </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
